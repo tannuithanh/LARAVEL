@@ -1,21 +1,26 @@
+
 <!doctype html>
 <html lang="en">
 
 <head>
 
     <meta charset="utf-8" />
-    <title>Đăng nhập | Kế hoạch điện tử</title>
+    <title>Trang Chủ | THACO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
+    <!-- <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" /> -->
     <meta content="Themesdesign" name="author" />
     <!-- App favicon -->
     <link rel="shortcut icon" href="{{asset('assets/images/favico.ico')}}">
+
+    <!-- jvectormap -->
+    <link href="{{asset('assets/libs/jqvmap/jqvmap.min.css')}}" rel="stylesheet" />
+
+    <!-- Bootstrap Css -->
     <link href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
     <!-- Icons Css -->
     <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- App Css-->
     <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
-
 
 </head>
 
@@ -109,7 +114,7 @@
                     <div class="navbar-brand-box text-center">
                         <a href="dashboard.php" class="logo logo-dark">
                             <span class="logo-sm">
-                                <img style="margin-left:-11px" src="{{asset('assets/images/logo-sm1.png')}}" alt="logo-sm-dark" height="22">
+                                <img src="{{asset('assets/images/logo-sm1.png')}}" height="22">
                             </span>
                             <span class="logo-lg">
                                 <img src="{{asset('assets/images/logo-dark1.png')}}" alt="logo-dark" height="35">
@@ -121,7 +126,7 @@
                                 <img src="{{asset('assets/images/logo-sm1.png')}}" alt="logo-sm-light" height="25">
                             </span>
                             <span class="logo-lg">
-                                <img style="margin-left:-11px" src="{{asset('assets/images/logo-light1.png')}}" alt="logo-light" height="63">
+                                <img src="{{asset('assets/images/logo-dark1.png')}}" alt="logo-light" height="63">
                             </span>
                         </a>
                     </div>
@@ -158,7 +163,35 @@
                         </div>
                     </div>
 
+                    <div class="dropdown d-inline-block user-dropdown">
+                        <div class="dropdown d-none d-lg-inline-block ms-1">
+                            <button type="button" class="btn header-item noti-icon waves-effect"
+                                data-toggle="fullscreen">
+                                <i class="ri-fullscreen-line"></i>
+                            </button>
+                        </div>
+                        <div class="dropdown d-inline-block">
 
+
+
+                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
+                            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <img class="rounded-circle header-profile-user"
+                                src="{{asset('assets/images/users/avatar-2.jpg')}}" alt="Header Avatar">
+
+                            <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-end">
+                            <!-- item-->
+                            <a class="dropdown-item" href="profile.php"><i
+                                    class="ri-user-line align-middle me-1"></i>Thông tin người dùng</a>
+                            <a class="dropdown-item" href="resetpass.php"><i class="ri-lock-line"
+                                    style="margin-right:4%;"></i>Đổi mật khẩu</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item text-danger" href="logout.php"><i
+                                    class="ri-shut-down-line align-middle me-1 text-danger"></i>Đăng xuất</a>
+                        </div>
+                    </div>
 
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
@@ -201,7 +234,6 @@
                             </ul>
                         </li>
 
-
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="mdi mdi-book-account"></i>
@@ -215,7 +247,6 @@
                             </ul>
                         </li>
 
-
                         <li>
                             <a href="javascript: void(0);" class="has-arrow waves-effect">
                                 <i class="ri-book-read-fill"></i>
@@ -223,13 +254,16 @@
                             </a>
                             <ul class="sub-menu mm-collapse" aria-expanded="false">
                                 <li><a href="listPlan.php">Danh Sách Kế Hoạch</a></li>
+
                                 <li><a href="createPlan.php">Tạo Kế Hoạch Ngày</a></li>
+
                                 <li><a href="categoryWork.php">Tạo hạng mục công việc</a></li>
                                 <li><a href="listCategoryWork.php">Danh sách hạng mục</a></li>
+
+
+                                <!-- <li><a href="email-compose.html">Email Compose</a></li> -->
                             </ul>
                         </li>
-
-
                     </ul>
                 </div>
                 <!-- Sidebar -->
@@ -804,9 +838,9 @@
                                                             class="apexcharts-selection-rect"></rect>
                                                     </g>
                                                     <rect id="SvgjsRect1351" width="0" height="0"
-                                                        x="0" y="0" rx="0" ry="0"
-                                                        opacity="1" stroke-width="0" stroke="none"
-                                                        stroke-dasharray="0" fill="#fefefe"></rect>
+                                                        x="0" y="0" rx="0"
+                                                        ry="0" opacity="1" stroke-width="0"
+                                                        stroke="none" stroke-dasharray="0" fill="#fefefe"></rect>
                                                     <g id="SvgjsG1420" class="apexcharts-yaxis" rel="0"
                                                         transform="translate(9.802083969116211, 0)">
                                                         <g id="SvgjsG1421" class="apexcharts-yaxis-texts-g"><text
@@ -1013,24 +1047,23 @@
             <!-- end page title -->
 
 
-            <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
-            <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-            <script src="{{asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
-            <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
-            <script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
+            <script src="assets/libs/jquery/jquery.min.js"></script>
+            <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="assets/libs/metismenu/metisMenu.min.js"></script>
+            <script src="assets/libs/simplebar/simplebar.min.js"></script>
+            <script src="assets/libs/node-waves/waves.min.js"></script>
 
             <!-- apexcharts js -->
-            <script src="{{asset('assets/libs/apexcharts/apexcharts.min.js')}}"></script>
+            <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
 
             <!-- jquery.vectormap map -->
-            <script src="{{asset('assets/libs/jqvmap/jquery.vmap.min.js')}}"></script>
-            <script src="{{asset('assets/libs/jqvmap/maps/jquery.vmap.usa.js')}}"></script>
+            <script src="assets/libs/jqvmap/jquery.vmap.min.js"></script>
+            <script src="assets/libs/jqvmap/maps/jquery.vmap.usa.js"></script>
 
 
-            <script src="{{asset('assets/js/pages/dashboard.init.js')}}"></script>
+            <script src="assets/js/pages/dashboard.init.js"></script>
 
-            <script src="{{asset('assets/js/app.js')}}"></script>
-
+            <script src="assets/js/app.js"></script>
 
 </body>
 

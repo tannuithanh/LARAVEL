@@ -1,83 +1,84 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+    <html lang="en">
     <head>
-
-        <meta charset="utf-8" />
-        <title>Đăng nhập | Kế hoạch điện tử</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
-        <meta content="Themesdesign" name="author" />
-        <!-- App favicon -->
+        <meta charset="UTF-8">
+        <title>THACO AUTO</title>
+        <meta charset="UTF-8">
+        <title>THACO AUTO</title>
+        <meta name="viewport"content="width=device-width,initial-scale=1.0">
+        <link href="{{asset('assets/css/login.css')}}" id="app-style" rel="stylesheet" type="text/css" />
         <link rel="shortcut icon" href="{{asset('assets/images/favico.ico')}}">
-        <link href="{{asset('assets/css/bootstrap.min.css')}}" id="bootstrap-style" rel="stylesheet" type="text/css" />
-        <!-- Icons Css -->
-        <link href="{{asset('assets/css/icons.min.css')}}" rel="stylesheet" type="text/css" />
-        <!-- App Css-->
-        <link href="{{asset('assets/css/app.min.css')}}" id="app-style" rel="stylesheet" type="text/css" />
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/bootstrap/css/bootstrap.min.css')}}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{asset('fonts/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{asset('fonts/Linearicons-Free-v1.0.0/icon-font.min.css')}}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/animate/animate.css')}}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/css-hamburgers/hamburgers.min.css')}}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/animsition/css/animsition.min.css')}}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/select2/select2.min.css')}}">
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{asset('vendor/daterangepicker/daterangepicker.css')}}">
 
-        <!-- Bootstrap Css -->
-
+        <!--===============================================================================================-->
+        <link rel="stylesheet" type="text/css" href="{{asset('css/util.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/main.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/Style.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/sweetalert2.css')}}">
+        <link href="{{asset('css/login.css')}}" id="app-style" rel="stylesheet" type="text/css" />
     </head>
+    <body  class="container bg-thaco" data-spy="scroll" data-target=".navbar" data-offset="50">
+    <form method="POST">
+        @csrf
+    <div style="text-align: center;color:#033E8C; font-weight: bold; font-size: 40px">R&D Ô TÔ</div>
+    <div style=" text-align: center;color:#DC143C; font-weight: bold; font-size: 30px">PHẦN MỀM KẾ HOẠCH ĐIỆN TỬ</div>
+    <hr>
+    <div id="formchangepass" style="width: max-content;
+        display: none;
+        z-index: 1;
+        position: fixed;
+        margin: auto;
+        font-family: Tahoma;
+        background-color: rgba(0, 0, 0, 0.4);
+        right: 0;
+        left: 0;">
+    <div>
+      </div>
+    </div>
+    </div>
+    </div>
 
-    <body class="bg-pattern">
-        <div class="bg-overlay"></div>
-        <div class="account-pages my-5 pt-5">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-xl-4 col-lg-6 col-md-8">
-                        <div class="card">
-                            <div class="card-body p-4">
-                                <div class="">
-                                    <div class="text-center">
-                                        <a href="index.html" class="">
-                                            <img src="{{asset('assets/images/logoreset.png')}}" alt="" height="24" class="auth-logo logo-dark mx-auto">
-                                            <img src="" alt="" height="24" class="auth-logo logo-light mx-auto">
-                                        </a>
-                                    </div>
-                                    <!-- end row -->
-                                    <h4 class="font-size-18 text-muted mt-2 text-center">Chào mừng bạn !</h4>
-                                    <p class="mb-5 text-center">Đăng nhập để tiếp tục với Kế Hoạch Điện Tử.</p>
-                                    <form class="form-horizontal" method="POST">
-                                        @csrf
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="mb-4">
-                                                    <label class="form-label" for="username">Nhập mã số nhân viên</label>
-                                                    <input type="text" class="form-control" id="username" name="MSNV" placeholder="Nhập mã số nhân viên">
-                                                </div>
-                                                <div class="mb-4">
-                                                    <label class="form-label" for="userpassword">Mật khẩu</label>
-                                                    <input type="password" class="form-control" id="userpassword" name="password"  placeholder="Nhập mật khẩu">
-                                                </div>
-                                                    <div class="d-grid mt-4">
-                                                    <button class="btn btn-primary waves-effect waves-light" type="submit">Đăng nhập</button>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-5 text-center">
-                            <p class="text-white-50">Bạn quên mật khẩu ? <a href="{{ route('forgotPass.Get') }}" class="fw-medium text-primary"> Lấy lại mật khẩu </a> </p>
-                            <p class="text-white-50">© <script>document.write(new Date().getFullYear())</script> Kế hoạch điện tử <i style="color:rgb(5, 9, 247)"><i class="mdi mdi-car"></i></i> R&D Ô Tô</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- end row -->
+    <div id="loginmain" style="background-color: rgba(255, 255, 255, 0.523);padding: 10px; text-align:center">
+        <div id ="loginmain1" class="col-12">
+            <div class="input-group flex-nowrap mb-2" style="align-items: baseline">
+                <i class="fa fa-user mr-1" aria-hidden="true" style="width: 20px"></i>
+                <h6 class="font-weight-bold mr-2" style="color:#033E8C; width: 100px">Tài khoản:</h6>
+                <input id="username" name="MSNV" type="text" class="form-control" placeholder="Nhập mã số nhân viên" aria-label="Tài khoản" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap mb-2" style="align-items: baseline">
+                <i class="fa fa-key mr-1" aria-hidden="true" style="width: 20px"></i>
+                <h6 class="font-weight-bold mr-2" style="color:#033E8C; width: 100px">Mật khẩu:</h6>
+                <input id="password" name="password" type="password" class="form-control" placeholder="Nhập mật khẩu" aria-label="Mật khẩu" aria-describedby="addon-wrapping">
+            </div>
+            <div class="input-group flex-nowrap mb-2" style="align-items: baseline">
+                <div style="width: 120px" class="mr-3"></div>
+                <button id="login" name="login" class="btn btn-success" type="submit">Đăng nhập</button>
+                <a href="{{ route('forgotPass.Get') }}" class="btn btn-link" style="font-size:15px;color:#033E8C;font-style: italic;">Quên mật khẩu</a>
             </div>
         </div>
-        <!-- end Account pages -->
+    </div>
 
-        <!-- JAVASCRIPT -->
-        <script src="{{asset('assets/libs/jquery/jquery.min.js')}}"></script>
-        <script src="{{asset('assets/libs/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-        <script src="{{asset('assets/libs/metismenu/metisMenu.min.js')}}"></script>
-        <script src="{{asset('assets/libs/simplebar/simplebar.min.js')}}"></script>
-        <script src="{{asset('assets/libs/node-waves/waves.min.js')}}"></script>
+    </form>
 
-        <script src="{{asset('assets/js/app.js')}}"></script>
 
     </body>
-</html>
+        <nav class="fixed-bottom" style="height: 50px;background-color:#033E8C; text-align: center">
+
+            <h6 style="margin-top: 20px;font-weight: bold; color:#FFFFFF">2022 @ Phát triển bởi: Nhóm CNTT R&D Ô TÔ</h6>
+        </nav>
+    </html>

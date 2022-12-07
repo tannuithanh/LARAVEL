@@ -14,5 +14,5 @@ Route::post('/login',[Login::class,'postLogin'])->name('login.Post');
 Route::get('/forgotpass',[forgotPassword::class,'forgotPass'])->name('forgotPass.Get');
 
 //Trang chủ
-Route::get('/dashBoard',[dashBoard::class,'dashBoard'])->name('dashBoard.Get');
 
+Route::get('/dashBoard',[dashBoard::class,'dashBoard'])->name('dashBoard.Get')->middleware('auth');
