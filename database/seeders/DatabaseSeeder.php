@@ -14,17 +14,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        //
-         $data = [
-            [
-                'id' => '1',
-                'name'=>'admin',
-                'MSNV' => '9999',
-                'email' => 'admin@thaco.com.vn',
-                'password' => bcrypt('12345'),
-            ],
-
-        ];
-        DB::table('users')->insert($data);
+        $this->call([
+            PostionsSeeder::class,
+            DepartmentsDatabase::class
+        ]);
     }
 }

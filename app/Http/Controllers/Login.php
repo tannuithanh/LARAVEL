@@ -22,8 +22,6 @@ class Login extends Controller
     }
 
     public function postLogin(Request $request){
-        $usersts = DB::table('users')->get();
-        dd($usersts);
         $users = [
             'MSNV' => $request->MSNV,
             'password' => $request->password,

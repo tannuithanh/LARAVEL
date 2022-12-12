@@ -15,4 +15,4 @@ Route::get('/forgotpass',[forgotPassword::class,'forgotPass'])->name('forgotPass
 
 //Trang chủ
 
-Route::get('/dashBoard',[dashBoard::class,'dashBoard'])->name('dashBoard.Get')->middleware('auth');
+Route::get('/dashBoard',[dashBoard::class,'dashBoard'])->name('dashBoard.Get');
