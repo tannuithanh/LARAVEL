@@ -20,12 +20,12 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->bigInteger('department_id')->unsigned()->index()->nullable();
-            $table->bigInteger('team_id')->unsigned()->index()->nullable();
-            $table->bigInteger('position_id')->unsigned()->index()->nullable();
-            $table->foreign('department_id')->references('id')->on('departments');
-            $table->foreign('team_id')->references('id')->on('teams');
-            $table->foreign('position_id')->references('id')->on('positions');
+            $table->unsignedBigInteger('department_id');
+            $table->unsignedBigInteger('team_id');
+            $table->unsignedBigInteger('position_id');
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
+            $table->foreign('position_id')->references('id')->on('positions')->onDelete('cascade');
             $table->integer('is_admin');
             $table->rememberToken();
             $table->timestamps();

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectPlanTable extends Migration
+class CreateDepartmenPlansTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,17 @@ class CreateProjectPlanTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_plan', function (Blueprint $table) {
+        Schema::create('departmen_plans', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
-            $table->unsignedBigInteger('department_plan_id');
-            $table->unsignedBigInteger('responsbility_id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('team_id');
-            $table->foreign('department_plan_id')->references('id')->on('departments')->onDelete('cascade');
-            $table->foreign('responsbility_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('responsbility_id');
+            $table->unsignedBigInteger('department_id');
+            $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
+            $table->foreign('responsbility_id')->references('id')->on('users')->onDelete('cascade');
             $table->integer('status');
             $table->timestamps();
         });
@@ -38,6 +36,6 @@ class CreateProjectPlanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_plan');
+        Schema::dropIfExists('departmen_plans');
     }
 }
